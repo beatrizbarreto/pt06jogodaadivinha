@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="utf-8">
+	<!--Primeiro  "chamamos" os ficheiros js e css, respetivamente-->
+    <script type="text/javascript" src="jogodaadivinha.js"></script>
+    <link rel="stylesheet" type="text/css" href="jogodaadivinha.css">
+</head>
+
+<body>
+	<center> <!--Alinhamos ao centro do jogo-->
+		<FORM NAME="FJogo">
+		    <!--Titulo do Jogo-->
+			<h1>O Jogo do Adivinha</h1>
+			<!--titulo do loca onde aparecem as notas que o programa faculta, isto é, as pistas-->
+			<h2>Área de mensagens:</h2>
+			<INPUT TYPE="txt" NAME="Output" VALUE="" Size="60"><br><br>
+			<!--no pedaço de código seguinte tem um texto ("o numero é") e uma caixa onde mostra o número adivinhado-->
+			O número é <INPUT TYPE="txt" NAME="HighLow" VALUE='' Size="10"><br><br>
+			<!--no pedaço seguinte existe um texto ("nº de tentativas") e uma caixa que indica o numero de tentativas-->
+			Nº de tentativas: <INPUT TYPE="txt" NAME="Tries"  VALUE="0" SIZE="2"> <br><br>
+			<hr> <br>
+			<!--O código em baixo é o código de um botão que inicia ou reinicia o jogo-->
+			<INPUT TYPE="button" NAME="init" VALUE="1.    Iniciar / Re-iniciar    " OnClick="Init()"><br><br>
+		
+	    	<!--o código seguinte tem um texto ("Escreve o número do teu palpite:") e uma caixa onde se pode escrever o palpite, um número de 0 a 49-->
+			2. Escreve o número do teu palpite:
+			<INPUT TYPE="txt" NAME="Input" VALUE='' Size="10"><br><br>
+			<!--10 caixas são construidas com o seguinte código, com as quais podes clicar e escrever o teu palpite em vez de usar o teclado, introduzidas pelo texto ("Podes usar este teclado para escrever o número")-->
+			Podes usar este teclado para escrever o número:<br><br>
+			<INPUT TYPE="button" NAME="one"  VALUE="  1  " OnClick="FJogo.Input.value += 1">
+			<INPUT TYPE="button" NAME="one"  VALUE="  2  " OnClick="FJogo.Input.value += 2">
+			<INPUT TYPE="button" NAME="one"  VALUE="  3  " OnClick="FJogo.Input.value += 3"><br>
+			<INPUT TYPE="button" NAME="one"  VALUE="  4  " OnClick="FJogo.Input.value += 4">
+			<INPUT TYPE="button" NAME="one"  VALUE="  5  " OnClick="FJogo.Input.value += 5">
+			<INPUT TYPE="button" NAME="one"  VALUE="  6  " OnClick="FJogo.Input.value += 6"><br>
+			<INPUT TYPE="button" NAME="one"  VALUE="  7  " OnClick="FJogo.Input.value += 7">
+			<INPUT TYPE="button" NAME="one"  VALUE="  8  " OnClick="FJogo.Input.value += 8">
+			<INPUT TYPE="button" NAME="one"  VALUE="  9  " OnClick="FJogo.Input.value += 9"><br>
+			<INPUT TYPE="button" NAME="one"  VALUE="  0  " OnClick="FJogo.Input.value += 0"><br><br>
+			
+		<!--Este último botão serve para verificar e o palpite está correto-->
+		<INPUT TYPE="button" NAME="DoIt" VALUE="3.    Verificar!    " OnClick="Jogo(FJogo.Input.value); FJogo.Input.value=''"><br><br>
+		</FORM>
+		
+		<!--Este código tem as instruções de como jogar o jogo-->
+		<hr><h3>Instruções:</h3>
+		1. Clica em Iniciar/Re-iniciar<br>
+		2. Clica nos botões com os números ou escreve diretamente<br>
+		3. Clica em Verificar!<br>
+		4. Repete os passos 2 e 3 até acertares no número<br><hr><br>
+		
+	</center>
+
+</body>
+
+</html>
+<!--Fim do código-->
